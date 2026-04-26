@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essence Beauty Studio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fff7f8;
+            color: #3d2b2f;
+        }
+
+        header {
+            background: linear-gradient(135deg, #f7a8b8, #d9879b);
+            color: white;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            min-height: 85vh;
+            background: linear-gradient(rgba(61, 43, 47, 0.45), rgba(61, 43, 47, 0.45)),
+                        url("https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1400&q=80");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #d9879b;
+            padding: 15px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #f7dce3;
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 15px;
+            color: #b85f78;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+            font-size: 18px;
+            color: #6c555b;
+            line-height: 1.6;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(184, 95, 120, 0.15);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            color: #b85f78;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .card p {
+            color: #6c555b;
+            line-height: 1.6;
+        }
+
+        .about {
+            background-color: #ffe7ed;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-text h2 {
+            font-size: 34px;
+            color: #b85f78;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #5c464c;
+            margin-bottom: 15px;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .benefit {
+            background-color: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(184, 95, 120, 0.12);
+        }
+
+        .benefit span {
+            font-size: 35px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #d9879b, #b85f78);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .contact .btn {
+            margin-top: 25px;
+            color: #b85f78;
+        }
+
+        footer {
+            background-color: #3d2b2f;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        .whatsapp-fixed {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                text-align: center;
+                justify-content: center;
+            }
+
+            nav {
+                margin-top: 18px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px 10px;
+            }
+
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Essence Beauty Studio</h1>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h2>Realce sua beleza com cuidado e delicadeza</h2>
+            <p>Especialistas em depilação, design de sobrancelhas e cílios para valorizar ainda mais o seu olhar.</p>
+            <a class="btn" href="https://wa.me/5500000000000" target="_blank">Agendar horário</a>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <p class="section-subtitle">Atendimentos feitos com carinho, higiene e atenção aos detalhes para você se sentir linda e confiante.</p>
+
+        <div class="services">
+            <div class="card">
+                <h3>Depilação</h3>
+                <p>Depilação com técnica segura, ambiente higienizado e cuidado para deixar sua pele macia e bem tratada.</p>
+            </div>
+
+            <div class="card">
+                <h3>Sobrancelhas</h3>
+                <p>Design de sobrancelhas personalizado para harmonizar o seu rosto e destacar sua beleza natural.</p>
+            </div>
+
+            <div class="card">
+                <h3>Cílios</h3>
+                <p>Alongamento, manutenção e cuidados para cílios mais marcantes, delicados e com acabamento elegante.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="sobre">
+        <img src="https://images.unsplash.com/photo-1595475884562-073c30d45670?auto=format&fit=crop&w=900&q=80" alt="Atendimento de beleza">
+
+        <div class="about-text">
+            <h2>Um espaço feito para você</h2>
+            <p>No Essence Beauty Studio, cada atendimento é pensado para entregar conforto, segurança e resultado bonito.</p>
+            <p>Trabalhamos com técnicas modernas, produtos de qualidade e um atendimento acolhedor para que você viva uma experiência leve e especial.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Por que escolher nosso salão?</h2>
+        <p class="section-subtitle">Beleza, autoestima e cuidado em cada detalhe.</p>
+
+        <div class="benefits">
+            <div class="benefit">
+                <span>✨</span>
+                <h3>Atendimento personalizado</h3>
+            </div>
+
+            <div class="benefit">
+                <span>💗</span>
+                <h3>Ambiente confortável</h3>
+            </div>
+
+            <div class="benefit">
+                <span>🧴</span>
+                <h3>Higiene e segurança</h3>
+            </div>
+
+            <div class="benefit">
+                <span>👁️</span>
+                <h3>Olhar mais marcante</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contato">
+        <h2>Agende seu horário</h2>
+        <p>Entre em contato pelo WhatsApp e escolha o melhor horário para o seu atendimento.</p>
+        <p><strong>Telefone:</strong> (00) 00000-0000</p>
+        <p><strong>Endereço:</strong> Rua Exemplo, 123 - Sua Cidade</p>
+        <p><strong>Instagram:</strong> @essencebeautystudio</p>
+        <a class="btn" href="https://wa.me/5500000000000" target="_blank">Chamar no WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>© 2026 Essence Beauty Studio. Todos os direitos reservados.</p>
+    </footer>
+
+    <a class="whatsapp-fixed" href="https://wa.me/5500000000000" target="_blank">WhatsApp</a>
+
+</body>
+</html>
